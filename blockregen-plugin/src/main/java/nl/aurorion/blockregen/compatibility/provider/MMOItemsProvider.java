@@ -146,13 +146,13 @@ public class MMOItemsProvider extends CompatibilityProvider implements ItemProvi
             throw new ParseException("Invalid input for MMOItems tool. Has to have the format of <type>:<id>.");
         }
 
-        String typeName = matcher.group(1);
+        String typeName = matcher.group(1).toUpperCase();
         Type type = MMOItems.plugin.getTypes().get(typeName);
         if (type == null) {
             throw new ParseException("Invalid MMOItems item type " + typeName + ".");
         }
 
-        String itemId = matcher.group(2);
+        String itemId = matcher.group(2).toUpperCase();
         return MMOItems.plugin.getMMOItem(type, itemId);
     }
 
