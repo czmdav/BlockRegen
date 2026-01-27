@@ -37,7 +37,7 @@ public class MMOItemsProvider extends CompatibilityProvider implements ItemProvi
     @Override
     public void onLoad() {
         // Register conditions provider.
-        // https://gitlab.com/phoenix-dvpmt/mmoitems/-/wikis/Main%20API%20Features#checking-if-an-itemstack-is-from-mi
+        // https://docs.phoenixdevt.fr/mmoitems/api/main.html#checking-if-an-itemstack-is-from-mi
         plugin.getPresetManager().getConditions().addProvider(getPrefix() + "/tool", ((key, node) -> {
 
             final MMOItem item = getMMOItem((String) node);
