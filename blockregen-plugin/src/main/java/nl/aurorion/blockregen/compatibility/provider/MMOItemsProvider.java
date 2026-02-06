@@ -165,7 +165,7 @@ public class MMOItemsProvider extends CompatibilityProvider implements ItemProvi
         Matcher matcher = ITEM_PATTERN.matcher(id);
 
         if (!matcher.matches()) {
-            throw new ParseException("Invalid input for MMOItems tool. Has to have the format of <type>:<id>.");
+            throw new ParseException("Invalid input for MMOItem. Has to have the format of '<type>:<id>'.");
         }
 
         String typeName = matcher.group(1).toUpperCase();
@@ -176,6 +176,10 @@ public class MMOItemsProvider extends CompatibilityProvider implements ItemProvi
         }
 
         String itemId = matcher.group(2).toUpperCase();
+
+        if (player == null) {
+            return MMOItems.plugin.getMMOItem(type, itemId);
+        }
 
         PlayerData playerData = MMOItems.plugin.getPlayerDataManager().get(player);
 
