@@ -1,7 +1,6 @@
 package nl.aurorion.blockregen;
 
 import nl.aurorion.blockregen.conditional.Condition;
-import nl.aurorion.blockregen.conditional.Context;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
